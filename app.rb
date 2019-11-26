@@ -35,5 +35,5 @@ get '/auth/twitter/callback' do
 end
 
 get '/' do
-  erb "<%= user_logged_in? ? session['user_id'] : 'user logged out' =%> <%= session['omniauth'] =%>"
+  erb "<html><head></head><body><%= user_logged_in? ? session['user_id'] : 'user logged out' =%> <br> <%= session['omniauth'] =%></body></html>"
 end

@@ -13,3 +13,4 @@ gem 'oauth2'
 gem 'omniauth'
 
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
