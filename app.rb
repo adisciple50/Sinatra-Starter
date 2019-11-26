@@ -35,5 +35,6 @@ get '/auth/twitter/callback' do
 end
 
 get '/' do
-  erb "<html><head></head><body><%= user_logged_in? ? session['user_id'].to_s : 'user logged out' =%> <br> <%= session['omniauth'].to_s =%><a href='/auth/twitter'>login</a></body></html>"
+  a = session['omniauth'].to_s
+  erb "<html><head></head><body><%= user_logged_in? ? session['user_id'].to_s : 'user logged out' =%> <br> <%= a =%><a href='/auth/twitter'>login</a></body></html>"
 end
