@@ -8,7 +8,7 @@ configure do
   enable :sessions
 
   use OmniAuth::Builder do
-    provider :twitter, ENV['CONSUMER_KEY'], ENV['CONSUMER_SECRET']
+    provider :twitter, 'CSSWZDYS8JmmS8u44BMds727x', 'G6etXygEAMk5EghpWnPE1i0eYgrkR6YKaOEtOW4WKRQyuLiC1E'
   end
 end
 
