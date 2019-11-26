@@ -21,12 +21,12 @@ helpers do
 end
 
 
-before do
+# before do
 #   do not redirect to twitter if the path starts with auth.
-  unless request.path_info =~ /\A\/[a][u][t]h\// # copyright free equivenet regex
-    redirect('/auth/twitter') unless user_logged_in?
-  end
-end
+#   unless request.path_info =~ /\A\/[a][u][t]h\// # copyright free equivenet regex
+#     redirect('/auth/twitter') unless user_logged_in?
+#   end
+# end
 
 get '/auth/twitter/callback' do
   session['user_id'] = env['omniauth.auth']['uid']
@@ -35,5 +35,5 @@ get '/auth/twitter/callback' do
 end
 
 get '/' do
-  erb "<html><head></head><body><%= user_logged_in? ? session['user_id'] : 'user logged out' =%> <br> <%= session['omniauth'] =%></body></html>"
+  erb "<html><head></head><body><%= user_logged_in? ? session['user_id'] : 'user logged out' =%> <br> <%= session['omniauth'] =%><a href='/auth/twitter'>login</a></body></html>"
 end
