@@ -30,9 +30,10 @@ end
 
 get '/auth/twitter/callback' do
   session['user_id'] = env['omniauth.auth']['uid']
+  session['omniauth'] = env['omniauth.auth']
   redirect '/'
 end
 
 get '/' do
-  erb "<%= user_logged_in? ? session['user_id'] : 'user logged out' =%> "
+  erb "<%= user_logged_in? ? session['user_id'] : 'user logged out' =%> <%= session['omniauth'] =%>"
 end
