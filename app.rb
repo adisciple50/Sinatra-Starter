@@ -30,7 +30,7 @@ end
 
 get '/auth/twitter/callback' do
   session['user_id'] = env['omniauth.auth']['uid']
-  session['omniauth'] = env['omniauth.auth']
+  # session['omniauth'] = env['omniauth.auth'] # the session is too big with this!
   redirect '/'
 end
 
