@@ -14,8 +14,9 @@ end
 
 helpers do
   # check if user is authenticated.
-  def user
-     not session[:user_id].nil?
+  def user_logged_in?
+      # if a session is not found return false. return true otherwise.
+      return session[:user_id].nil? ? false : true
   end
 end
 
@@ -23,7 +24,7 @@ end
 before do
 #   do not redirect to twitter if the path starts with auth.
   unless request.path_info =~ /\A\/[a][u][t]h\// # copyright free equivenet regex
-    redirect('/auth/twitter') unless user
+    redirect('/auth/twitter') unless user_logged_in?
   end
 end
 
@@ -33,5 +34,5 @@ get '/auth/twitter/callback' do
 end
 
 get '/' do
-  erb "<%= session['user_id'] =%>"
+  erb "<%= user_logged_in? ? session['user_id'] =%> : 'user logged out' "
 end
