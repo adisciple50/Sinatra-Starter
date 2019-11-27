@@ -3,9 +3,11 @@
 
 </head>
 <body>
-<%= user_logged_in? ? session['user_id'].to_s : 'user logged out' %>
+<%= twitter_logged_in? ? session['twitter_id'].to_s : 'user logged out of twitter' %>
+<%= facebook_logged_in? ? session['facebook_id'].to_s : 'user logged out of facebook' %>
 <br>
-<%= session['omniauth'].to_s %>
+
 <a href='/auth/twitter'>login</a>
+<a href='/auth/facebook'>login</a>
 </body>
 </html>
