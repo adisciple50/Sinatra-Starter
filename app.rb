@@ -21,7 +21,7 @@ helpers do
       # if a session is not found return false. return true otherwise.
       return session[:twitter_id].nil? ? false : true
   end
-  def twitter_logged_in?
+  def facebook_logged_in?
       # if a session is not found return false. return true otherwise.
       return session[:facebook_id].nil? ? false : true
   end
