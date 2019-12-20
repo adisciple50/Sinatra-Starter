@@ -23,7 +23,7 @@ GEM
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
-    rack (2.0.7)
+    rack (2.0.8)
     rack-protection (2.0.7)
       rack
     sinatra (2.0.7)
@@ -35,6 +35,7 @@ GEM
     tilt (2.0.10)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
